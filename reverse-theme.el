@@ -34,7 +34,10 @@
 (custom-theme-set-faces
  'reverse
  '(button ((((type graphics)) (:underline t :foreground "cyan1"))))
- '(default ((((type graphics)) (:background "black" :foreground "white"))))
+ '(default
+   ((default (:height 150 :background "black" :foreground "white"))
+    (((type ns)) (:height 200))
+    (((type tty)) (:family "default" :height 1 :background "unspecified-bg" :foreground "unspecified-fg"))))
  '(cursor ((((type graphics)) (:foreground "white"))))
  '(region ((((type graphics)) (:background "blue3"))))
  '(font-lock-builtin-face ((((type graphics)) (:foreground "LightSteelBlue"))))
