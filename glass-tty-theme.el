@@ -4,7 +4,7 @@
 
 ;; Author: Matthew X. Economou <xenophon+glass-tty-theme@irtnog.org>
 ;; URL: https://github.com/irtnog/glass-tty-theme
-;; Version: 1.0
+;; Version: 1.0.0
 
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
