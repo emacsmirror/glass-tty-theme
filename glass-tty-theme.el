@@ -1,38 +1,68 @@
-;;; reverse-theme.el --- Reverse theme for Emacs
-
+;; glass-tty-theme.el --- reverse video-like theme
+;; Copyright (C) 2024 by Matthew X. Economou
 ;; Copyright (C) 2014 by Syohei YOSHIDA
 
-;; Author: Syohei YOSHIDA <syohex@gmail.com>
-;; URL: https://github.com/syohex/emacs-reverse-theme
-;; Version: 0.03
+;; Author: Matthew X. Economou <xenophon+glass-tty-theme@irtnog.org>
+;; URL: https://github.com/irtnog/glass-tty-theme
+;; Version: 1.0
 
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by the Free Software Foundation, either version 3 of the
+;; License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;;
 ;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+;; along with this program.  If not, see
+;; <http://www.gnu.org/licenses/>.
 
-;;; Commentary:
-;;
-;; Color theme as 'emacs -r' or 'emacs --reverse-video'.
-;; Frames created by `make-frame-command' or 'emacsclient --create-frame'
-;; are not applied reverse color with '-r' or 'reverse-video' option
-;;
+;; For reference:
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Creating-Custom-Themes.html
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Custom-Themes.html
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Applying-Customizations.html
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Defining-Faces.html
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Window-Systems.html
 
-;;; Code:
+(deftheme glass-tty
+  "Reverse video-like theme for use with the Glass TTY VT220 font.
 
-(deftheme reverse
-  "Reverse color theme(like '-r' option)")
+Like the 'reverse' theme, this mimics the color theme applied
+when starting Emacs in reverse video mode while adding support
+for multiple frames.  Additionally, 'glass-tty' addresses some
+issues 'reverse' has with multiple frames while remaining
+backwards compatible with the default theme for tty frames.
+Because this theme is also designed around the Glass TTY VT220
+font, it automatically scales the font correctly depending on the
+windowing system.  The end result is a color theme suitable for
+use when Emacs runs as a service across multiple platforms.
+
+Before using this theme, dowload and install the font from
+https://caglrc.cc/~svo/glasstty/.  How to change Emacs' default
+font depends on the windowing system:
+
+- On Windows, create a Registry key named
+  HKEY_CURRENT_USER\\Software\\GNU\\Emacs\\ containing a string value
+  'Emacs.Font' with the data
+  '-*-Glass TTY VT220-*-*-*--*-150-*-*-*-*-*-*'.
+
+- On X11, add the following to ~/.Xresources:
+  'Emacs.Font: -*-Glass TTY VT220-*-*-*--*-150-*-*-*-*-*-*'
+
+- On macOS, run the following Emacs Lisp expression:
+  '(add-to-list 'default-frame-alist
+                '(font . \"-*-Glass TTY VT220-*-*-*--*-200-*-*-*-*-*-*\"))'
+
+See also:
+https://www.emacswiki.org/emacs/SetFonts
+https://www.emacswiki.org/emacs/ChangeFontsPermanentlyOnWindows"
+  :background-mode 'dark)
 
 (custom-theme-set-faces
- 'reverse
+ 'glass-tty
  '(button ((((type graphics)) (:underline t :foreground "cyan1"))))
  '(default
    ((default (:height 150 :background "black" :foreground "white"))
@@ -178,6 +208,6 @@
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-(provide-theme 'reverse)
+(provide-theme 'glass-tty)
 
-;;; reverse-theme.el ends here
+;;; glass-tty-theme.el ends here

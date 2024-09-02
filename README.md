@@ -1,27 +1,19 @@
-# Reverse theme for Emacs [![melpa badge][melpa-badge]][melpa-link] [![melpa stable badge][melpa-stable-badge]][melpa-stable-link]
+[![melpa badge][melpa-badge]][melpa-link]
+[![melpa stable badge][melpa-stable-badge]][melpa-stable-link]
 
-Color theme like `emacs -r` or `emacs --reverse-video`
+# glass-tty-theme
 
-## Requirements
+`glass-tty-theme` is a reverse video-like Emacs color theme for use
+with [the Glass TTY VT220 font](https://caglrc.cc/~svo/glasstty/).
+The theme is available on [MELPA](https://melpa.org/) and
+[MELPA stable](https://stable.melpa.org/).  Install it on Emacs 24 or
+newer with the following command:
 
-* Emacs 24 or higher
+<kbd>M-x package-install [RET] glass-tty-theme [RET]</kbd>
 
+![glass-tty-theme](image/glass-tty-theme.png)
 
-## ScreenShot
-
-![Reverse Theme](image/reverse-theme.png)
-
-
-## Installation
-
-`reverse-theme` is available on [MELPA](https://melpa.org/) and [MELPA stable](https://stable.melpa.org/)
-
-You can install `reverse-theme` with the following command.
-
-<kbd>M-x package-install [RET] reverse-theme [RET]</kbd>
-
-
-[melpa-link]: https://melpa.org/#/reverse-theme
-[melpa-stable-link]: https://stable.melpa.org/#/reverse-theme
-[melpa-badge]: https://melpa.org/packages/reverse-theme-badge.svg
-[melpa-stable-badge]: https://stable.melpa.org/packages/reverse-theme-badge.svg
+[melpa-link]: https://melpa.org/#/glass-tty-theme
+[melpa-stable-link]: https://stable.melpa.org/#/glass-tty-theme
+[melpa-badge]: https://melpa.org/packages/glass-tty-theme-badge.svg
+[melpa-stable-badge]: https://stable.melpa.org/packages/glass-tty-theme-badge.svg
