@@ -11,10 +11,7 @@ newer with the following command:
 
 <kbd>M-x package-install [RET] glass-tty-theme [RET]</kbd>
 
-Add
-`"f1464b61b06a9bb9082399e3dcb640758a2daf9f2a09ef816c7d290a997864d4"`
-to `custom-safe-themes` before loading the theme with the following
-command:
+Load the theme with the following command:
 
 <kbd>M-x load-theme [RET] glass-tty [RET]</kbd>
 
